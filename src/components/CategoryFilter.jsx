@@ -1,14 +1,16 @@
+const base =
+  'inline-flex min-h-[48px] items-center rounded-full px-5 text-[17px] font-medium transition-colors'
+const on = 'bg-chocolate text-blanco'
+const off = 'border border-hilo text-chocolate hover:border-dorado'
+
 export default function CategoryFilter({ categories, active, onSelect }) {
   return (
     <div className="flex flex-wrap gap-3">
       <button
         type="button"
         onClick={() => onSelect('todos')}
-        className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-          active === 'todos'
-            ? 'bg-rost-cta text-base-950'
-            : 'border border-white/10 text-slate-300 hover:border-rose-glow/40 hover:text-white'
-        }`}
+        aria-pressed={active === 'todos'}
+        className={`${base} ${active === 'todos' ? on : off}`}
       >
         Todos
       </button>
@@ -17,13 +19,10 @@ export default function CategoryFilter({ categories, active, onSelect }) {
           key={category.id}
           type="button"
           onClick={() => onSelect(category.id)}
-          className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-            active === category.id
-              ? 'bg-rost-cta text-base-950'
-              : 'border border-white/10 text-slate-300 hover:border-rose-glow/40 hover:text-white'
-          }`}
+          aria-pressed={active === category.id}
+          className={`${base} ${active === category.id ? on : off}`}
         >
-          {category.icon} {category.name}
+          {category.name}
         </button>
       ))}
     </div>

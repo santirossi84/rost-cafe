@@ -1,25 +1,37 @@
 import { Link } from 'react-router-dom'
 
-export default function Hero() {
+// Portada: foto propia a sangre con velo chocolate al 35%. Mientras no haya foto,
+// se muestra el fondo chocolate. Para sumarla: poné la imagen en public/images/portada.jpg
+// y pasá heroImage="/images/portada.jpg".
+export default function Hero({ heroImage }) {
   return (
-    <section className="relative overflow-hidden bg-rost-gradient px-6 pb-24 pt-28 text-center">
-      <p className="mx-auto mb-4 w-fit rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs uppercase tracking-widest text-rose-glow">
-        Tercer aniversario
-      </p>
-      <h1 className="mx-auto max-w-3xl text-4xl font-semibold leading-tight tracking-tight sm:text-5xl md:text-6xl">
-        Nuevo menú, <span className="text-gradient">misma pasión</span>
-      </h1>
-      <p className="mx-auto mt-6 max-w-xl text-balance text-lg text-slate-300">
-        Tres años acompañando tus mañanas. Hoy celebramos con una carta renovada
-        pensada para sorprenderte en cada visita.
-      </p>
-      <div className="mt-10 flex justify-center">
-        <Link
-          to="/menu"
-          className="rounded-full bg-rost-cta px-8 py-3 text-sm font-semibold text-base-950 shadow-glow transition hover:scale-[1.03]"
-        >
-          Ver Menú Completo
-        </Link>
+    <section
+      className="relative isolate overflow-hidden bg-chocolate py-24 sm:py-32"
+      style={heroImage ? { backgroundImage: `url(${heroImage})`, backgroundSize: 'cover', backgroundPosition: 'center' } : undefined}
+    >
+      {heroImage && <div className="absolute inset-0 -z-10 bg-chocolate/35" aria-hidden="true" />}
+      <div className="mx-auto max-w-pagina px-6">
+        <p className="etiqueta !text-blanco/80">Café de especialidad · Ramona</p>
+        <h1 className="mt-6 max-w-3xl font-condensado text-portada text-blanco sm:text-portada-lg">
+          Café de especialidad y pastelería artesanal<span className="text-dorado">.</span>
+        </h1>
+        <p className="mt-6 max-w-lectura text-bajada text-blanco/90 sm:text-bajada-lg">
+          Tres años acompañando tus mañanas. Hoy celebramos con una carta renovada.
+        </p>
+        <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-2">
+          <Link
+            to="/menu"
+            className="inline-flex min-h-[48px] items-center rounded-boton bg-papel px-[22px] py-[14px] text-[17px] font-medium text-chocolate"
+          >
+            Ver la carta
+          </Link>
+          <a
+            href="#como-llegar"
+            className="inline-flex min-h-[48px] items-center text-[17px] font-medium text-blanco underline decoration-dorado decoration-1 underline-offset-4"
+          >
+            Cómo llegar
+          </a>
+        </div>
       </div>
     </section>
   )

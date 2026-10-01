@@ -17,9 +17,9 @@ const data = {
     {
       label: 'Unidades vendidas (mes)',
       data: salesData.values,
-      backgroundColor: 'rgba(255, 107, 157, 0.55)',
-      hoverBackgroundColor: 'rgba(94, 234, 212, 0.65)',
-      borderRadius: 8,
+      backgroundColor: '#331F13',
+      hoverBackgroundColor: '#BF935E',
+      borderRadius: 4,
       maxBarThickness: 48,
     },
   ],
@@ -31,27 +31,27 @@ const options = {
   plugins: {
     legend: { display: false },
     tooltip: {
-      backgroundColor: '#17181f',
-      borderColor: 'rgba(255,255,255,0.1)',
+      backgroundColor: '#331F13',
+      borderColor: '#E7E1D8',
       borderWidth: 1,
     },
   },
   scales: {
     x: {
-      ticks: { color: '#94a3b8' },
+      ticks: { color: '#5A4636', font: { family: 'Barlow', size: 14 } },
       grid: { display: false },
     },
     y: {
-      ticks: { color: '#94a3b8' },
-      grid: { color: 'rgba(255,255,255,0.06)' },
+      ticks: { color: '#5A4636', font: { family: 'Barlow', size: 14 } },
+      grid: { color: '#E7E1D8' },
     },
   },
 }
 
 export default function SalesChart() {
   return (
-    <div className="glass-card p-6">
-      <h3 className="mb-4 font-semibold text-slate-100">Top productos vendidos</h3>
+    <div className="tarjeta p-6 sm:p-8">
+      <h3 className="mb-4 text-titulo-chico">Top productos vendidos</h3>
       <div className="h-72">
         <Bar data={data} options={options} />
       </div>

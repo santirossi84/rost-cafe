@@ -6,7 +6,7 @@ import MenuDashboard from './pages/MenuDashboard.jsx'
 
 export default function App() {
   return (
-    <div className="flex min-h-screen flex-col bg-base-950">
+    <div className="flex min-h-screen flex-col bg-papel">
       <Navbar />
       <main className="flex-1">
         <Routes>

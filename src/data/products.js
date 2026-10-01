@@ -1,8 +1,8 @@
 export const categories = [
-  { id: 'cafe', name: 'Café de especialidad', icon: '☕' },
-  { id: 'pasteleria', name: 'Pastelería', icon: '🥐' },
-  { id: 'brunch', name: 'Brunch', icon: '🍳' },
-  { id: 'bebidas-frias', name: 'Bebidas frías', icon: '🧊' },
+  { id: 'cafe', name: 'Café de especialidad' },
+  { id: 'pasteleria', name: 'Pastelería' },
+  { id: 'brunch', name: 'Brunch' },
+  { id: 'bebidas-frias', name: 'Bebidas frías' },
 ]
 
 export const products = [
@@ -11,7 +11,6 @@ export const products = [
     name: 'Flat White Signature',
     category: 'cafe',
     description: 'Doble shot de espresso con leche vaporizada en microespuma sedosa.',
-    price: 3200,
     image: '',
     signature: true,
   },
@@ -20,7 +19,6 @@ export const products = [
     name: 'Cold Brew ROST',
     category: 'cafe',
     description: 'Extracción en frío 18 horas, notas a chocolate y cítricos.',
-    price: 3400,
     image: '',
     signature: true,
   },
@@ -29,7 +27,6 @@ export const products = [
     name: 'Cortado Clásico',
     category: 'cafe',
     description: 'Espresso cortado con leche en partes iguales.',
-    price: 2600,
     image: '',
   },
   {
@@ -37,7 +34,6 @@ export const products = [
     name: 'Medialuna de Manteca',
     category: 'pasteleria',
     description: 'Hojaldrada, horneada todas las mañanas.',
-    price: 1500,
     image: '',
   },
   {
@@ -45,7 +41,6 @@ export const products = [
     name: 'Cheesecake de Frutos Rojos',
     category: 'pasteleria',
     description: 'Base de galleta, cremoso de queso y coulis casero.',
-    price: 4200,
     image: '',
     signature: true,
   },
@@ -54,7 +49,6 @@ export const products = [
     name: 'Avocado Toast',
     category: 'brunch',
     description: 'Pan de masa madre, palta, huevo poché y semillas tostadas.',
-    price: 5800,
     image: '',
   },
   {
@@ -62,7 +56,6 @@ export const products = [
     name: 'Bowl de Yogur y Granola',
     category: 'brunch',
     description: 'Yogur griego, granola casera, miel y frutas de estación.',
-    price: 4600,
     image: '',
   },
   {
@@ -70,7 +63,6 @@ export const products = [
     name: 'Iced Matcha Latte',
     category: 'bebidas-frias',
     description: 'Matcha ceremonial batido con leche a elección sobre hielo.',
-    price: 3800,
     image: '',
     signature: true,
   },
@@ -79,7 +71,6 @@ export const products = [
     name: 'Limonada de Jengibre',
     category: 'bebidas-frias',
     description: 'Limón exprimido, jengibre fresco y un toque de menta.',
-    price: 2900,
     image: '',
   },
 ]

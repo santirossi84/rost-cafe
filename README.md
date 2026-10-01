@@ -40,7 +40,7 @@ npm run lint     # eslint
 
 ## Páginas
 
-- **`/`** — Landing con hero, stats y categorías del menú.
+- **`/`** — Landing con portada, números, categorías de la carta y cómo llegar.
 - **`/menu`** — Dashboard interactivo con filtro por categoría, cards de producto y
   gráfico de top productos vendidos. Acepta `?categoria=<id>` para llegar con un
   filtro preseleccionado.
@@ -58,6 +58,16 @@ VITE_N8N_WEBHOOK_URL=https://tu-instancia-n8n.com/webhook
 
 Si la variable no está definida, las llamadas se loguean en consola sin
 romper la UI.
+
+## WhatsApp
+
+Los botones "Pedí por WhatsApp" usan `VITE_WHATSAPP_NUMBER` (solo dígitos con
+código de país) en `.env.local`.
+
+## Diseño
+
+El sistema de diseño está en `DESIGN.md`. El logo en `public/logo-rost.svg` es un
+placeholder: reemplazarlo por el logo oficial.
 
 ## Ver también
 

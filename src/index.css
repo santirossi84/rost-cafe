@@ -8,16 +8,53 @@
   }
 
   body {
-    @apply bg-base-950 text-slate-100 antialiased;
+    @apply bg-papel font-sans text-texto text-chocolate antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-titulo font-medium text-chocolate;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme('colors.dorado.profundo');
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
   }
 }
 
-@layer utilities {
-  .text-gradient {
-    @apply bg-rost-cta bg-clip-text text-transparent;
+@layer components {
+  .etiqueta {
+    @apply font-etiqueta text-etiqueta font-light uppercase text-dorado-profundo;
   }
 
-  .glass-card {
-    @apply rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm;
+  .boton-primario {
+    @apply inline-flex min-h-[48px] items-center justify-center rounded-boton bg-chocolate px-[22px] py-[14px] text-[17px] font-medium text-blanco transition-colors hover:bg-chocolate-suave;
+  }
+
+  .boton-secundario {
+    @apply inline-flex min-h-[48px] items-center text-[17px] font-medium text-chocolate underline decoration-dorado decoration-1 underline-offset-4;
+  }
+
+  .tarjeta {
+    @apply rounded-tarjeta border border-hilo bg-blanco shadow-tarjeta;
+  }
+
+  /* El punto final dorado de los títulos principales */
+  .punto-dorado::after {
+    content: '.';
+    @apply text-dorado;
   }
 }

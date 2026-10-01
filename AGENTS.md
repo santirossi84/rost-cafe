@@ -6,16 +6,17 @@ repositorio.
 ## Contexto del proyecto
 
 ROST Café está relanzando su web para el tercer aniversario: nueva landing page
-con estética estilo Raycast (fondo oscuro, gradientes rosa/cyan) y un dashboard
-de menú interactivo con filtros por categoría y gráficos de ventas.
+y un dashboard de menú interactivo con filtros por categoría. La identidad
+visual (tema claro, estilo revista) está definida en `DESIGN.md`: leelo antes de
+tocar estilos.
 
 ## Stack y convenciones
 
 - **React + Vite**, componentes funcionales con hooks. No se usa TypeScript.
-- **Tailwind CSS** para estilos. Los tokens de marca (colores, gradientes,
-  sombras) viven en `tailwind.config.js` — reutilizalos en vez de escribir
-  valores arbitrarios sueltos (`bg-[#...]`) cuando ya existe un token
-  equivalente (`bg-rost-gradient`, `text-gradient`, `glass-card`, etc.).
+- **Tailwind CSS** para estilos. Los tokens de marca (colores, tipografías,
+  radios, sombra) viven en `tailwind.config.js` y siguen `DESIGN.md` —
+  reutilizalos en vez de escribir valores arbitrarios sueltos (`bg-[#...]`)
+  (`bg-papel`, `text-chocolate`, `.boton-primario`, `.tarjeta`, `.etiqueta`, etc.).
 - **Chart.js** vía `react-chartjs-2` para visualizaciones. Registrar solo los
   elementos de Chart.js que se usan (ver `SalesChart.jsx`).
 - **React Router** para navegación entre `/` (landing) y `/menu` (dashboard).
@@ -35,8 +36,9 @@ hardcodear URLs de n8n en componentes.
 1. `npm run build` debe pasar sin errores.
 2. `npm run lint` debe pasar sin errores nuevos.
 3. Si el cambio es visual, levantar `npm run dev` y verificar en navegador
-   (o con captura de pantalla) que la estética dark/rosa/cyan se mantiene
-   consistente entre landing y dashboard.
+   (o con captura de pantalla) que se respeta `DESIGN.md` entre landing y
+   carta (tema claro, sin degradados, sin negritas en títulos, sin emojis,
+   carta sin precios).
 
 ## Qué evitar
 

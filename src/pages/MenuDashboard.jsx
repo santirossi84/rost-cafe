@@ -16,21 +16,20 @@ export default function MenuDashboard() {
   }, [activeCategory])
 
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16">
-      <div className="mb-10">
-        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-          Menú <span className="text-gradient">Interactivo</span>
-        </h1>
-        <p className="mt-2 text-slate-400">
-          Filtrá por categoría y descubrí nuestra carta completa.
+    <section className="mx-auto max-w-pagina px-6 py-seccion sm:py-seccion-lg">
+      <div className="mb-8">
+        <p className="etiqueta">La carta</p>
+        <h1 className="punto-dorado mt-4 text-titulo sm:text-titulo-lg">Nuestra carta</h1>
+        <p className="mt-4 max-w-lectura text-bajada text-chocolate-suave sm:text-bajada-lg">
+          Filtrá por categoría y descubrí todo lo que preparamos.
         </p>
       </div>
 
-      <div className="mb-10">
+      <div className="mb-8">
         <CategoryFilter categories={categories} active={activeCategory} onSelect={setActiveCategory} />
       </div>
 
-      <div className="mb-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mb-seccion grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {filteredProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

@@ -2,18 +2,18 @@ import { stats } from '../data/products.js'
 
 export default function Stats() {
   return (
-    <section className="mx-auto -mt-12 max-w-4xl px-6">
-      <div className="glass-card grid grid-cols-1 gap-6 p-8 sm:grid-cols-3">
+    <section className="mx-auto max-w-pagina px-6 pt-seccion sm:pt-seccion-lg">
+      <dl className="grid grid-cols-1 gap-8 sm:grid-cols-3">
         {stats.map((stat) => (
-          <div key={stat.id} className="text-center">
-            <p className="text-gradient text-3xl font-bold sm:text-4xl">
+          <div key={stat.id} className="flex flex-col border-t border-dorado pt-6">
+            <dt className="order-2 mt-2 text-texto text-chocolate-suave">{stat.label}</dt>
+            <dd className="order-1 font-condensado text-[40px] font-medium leading-none text-chocolate">
               {stat.value.toLocaleString('es-AR')}
               {stat.suffix}
-            </p>
-            <p className="mt-2 text-sm text-slate-400">{stat.label}</p>
+            </dd>
           </div>
         ))}
-      </div>
+      </dl>
     </section>
   )
 }
